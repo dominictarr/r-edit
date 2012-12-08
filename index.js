@@ -28,7 +28,7 @@ function REdit() {
 
 var R = REdit.prototype
 
-R.text  = function (text) {
+R.text  = function text (text) {
   if(!arguments.length)
     return this.toJSON()
   
