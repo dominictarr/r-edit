@@ -7,12 +7,13 @@
     "url": "git://github.com/dominictarr/r-edit.git"
   },
   "dependencies": {
+    "adiff": "~0.2.7",
+    "r-array": "~0.1.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
   "author": "'Dominic Tarr' <dominic.tarr@gmail.com> (http://dominictarr.com)",
-  "license": "MIT"  
+  "license": "MIT"
 }
