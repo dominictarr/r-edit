@@ -1,0 +1,23 @@
+{
+  "name": "r-edit_example",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/shoe",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/'Dominic Tarr'.git"
+  },
+  "dependencies": {
+    "shoe": "~0.0.7",
+    "ecstatic": "~0.1.6",
+    "reconnect": "~0.1.2",
+    "client-reloader": "~1.0.2"
+  },
+  "devDependencies": {
+    "browserify": "*"
+  },
+  "scripts": {
+    "test": "tap test",
+    "build": "browserify client.js -o static/bundle.js --debug"
+  },
+  "author": "'Dominic Tarr' <dominic.tarr@gmail.com> (http://dominictarr.com)"
+}
