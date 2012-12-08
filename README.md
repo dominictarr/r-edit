@@ -6,7 +6,7 @@ Collaborative Editing the EASY way.
 
 ## example
 
-see r-edit/example
+see [r-edit/example](https://github.com/dominictarr/r-edit/tree/master/example)
 
 ``` js
 //client.js
