@@ -2,7 +2,16 @@
 
 Collaborative Editing the EASY way.
 
-<img src=https://secure.travis-ci.org/dominictarr/r-edit.png?branch=master>
+This module uses Commutative Replicated Data Structures, NO Operational Transforms.
+
+see [
+  A commutative replicated data type for cooperative editing
+](http://hal.inria.fr/docs/00/44/59/75/PDF/icdcs09-treedoc.pdf)
+
+and [
+LLogoot :  a Scalable Optimistic Replication Algorithm 
+ for Collaborative Editing on P2P Networks
+](http://hal.archives-ouvertes.fr/docs/00/43/23/68/PDF/main.pdf)
 
 ## example
 
@@ -32,7 +41,6 @@ shoe(function (stream) {
   stream.pipe(r.createStream()).pipe(stream)
 }).install(httpServer)
 ```
-
 
 ## License
 
