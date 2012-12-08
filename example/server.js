@@ -13,6 +13,7 @@ shoe(reloader(function (stream) {
   console.log('connection')
   //echo server
   stream.pipe(text.createStream()).pipe(stream)
+  stream.pipe(process.stderr, {end: false})
 })).install(http.createServer(
   ecstatic(join(__dirname, 'static'))
 ).listen(PORT, function () {
