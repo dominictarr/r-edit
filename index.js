@@ -30,7 +30,7 @@ var R = REdit.prototype
 
 R.text  = function text (text) {
   if(!arguments.length)
-    return this.toJSON()
+    return this.toJSON().join('')
   
   var old = this.toJSON()
   text = split(text)
@@ -88,5 +88,7 @@ R.wrap = function (ta) {
   ta.addEventListener('focus', function () {
     ta.selectionStart = ta.selectionEnd = start
   })
+  ta.value = this.text()
+
   return this
 }
