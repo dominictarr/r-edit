@@ -39,10 +39,26 @@ R.text  = function text (text) {
   patch(this, p)
 }
 
+R.unwrap = function () {
+
+}
+
 R.wrap = function (ta) {
   var cursor = 0, start
   var self = this
-  this.on('preupdate', function (ch) {
+
+  if(this.wrapped)
+    throw new Error('rEdit is already wrapping a textarea. unwrap it first!')
+
+  if(ta._rEditWrapper)
+    ta._rEditWrapper.unwrap()
+  ta._rEditWrapper = this
+  this.wrapped = ta
+
+  console.log('WRAP', this.text())
+  ta.value = this.text()
+
+  function onPreupdate (ch) {
     //force update when recieve message.
     cursor = 0
     start = ta.selectionStart
@@ -65,30 +81,43 @@ R.wrap = function (ta) {
     //THIS IS ACTUALLY WRONG. CAN'T insert into a selection!
     start = start + cursor
     end   = end   + cursor
-  })
-  this.on('_update', function (update) {
+  }
+  this.on('preupdate', onPreupdate)
+  function on_update (update) {
     if(update[2] !== self.id) {
       ta.value = self.toJSON().join('')
       ta.selectionStart = ta.selectionEnd = start
     }
-  })
+  }
+  this.on('_update', on_update)
   var pending = false
-  ta.addEventListener('input', function () {
+  function onInput () {
     //if(pending) return
     //pending = true
     //setTimeout(function () {
     //pending = false
     self.text(ta.value)
     //}, 300)
-  })
-  ta.addEventListener('keydown', function () {
+  }
+  function onKeydown () {
     start = ta.selectionStart
     end   = ta.selectionEnd
-  })
-  ta.addEventListener('focus', function () {
+  }
+  function onFocus () {
     ta.selectionStart = ta.selectionEnd = start
-  })
-  ta.value = this.text()
+  }
+  ta.addEventListener('input', onInput)
+  ta.addEventListener('keydown', onKeydown)
+  ta.addEventListener('focus', onFocus )
+
+  this.unwrap = function () {
+    ta.removeEventListener('input'  , onInput)
+    ta.removeEventListener('keydown', onKeydown)
+    ta.removeEventListener('focus'  , onFocus)
+    this.removeListener('preupdate' , onPreupdate)
+    this.removeListener('_update'   , on_update)
+    this.unwrap = function () {}
+  }
 
   return this
 }
