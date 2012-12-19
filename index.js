@@ -52,10 +52,10 @@ R.wrap = function (ta) {
 
   if(ta._rEditWrapper)
     ta._rEditWrapper.unwrap()
+
   ta._rEditWrapper = this
   this.wrapped = ta
 
-  console.log('WRAP', this.text())
   ta.value = this.text()
 
   function onPreupdate (ch) {
@@ -89,7 +89,7 @@ R.wrap = function (ta) {
       ta.selectionStart = ta.selectionEnd = start
     }
   }
-  this.on('_update', on_update)
+  this.on('_update'  , on_update)
   var pending = false
   function onInput () {
     //if(pending) return
@@ -106,9 +106,9 @@ R.wrap = function (ta) {
   function onFocus () {
     ta.selectionStart = ta.selectionEnd = start
   }
-  ta.addEventListener('input', onInput)
+  ta.addEventListener('input'  , onInput)
   ta.addEventListener('keydown', onKeydown)
-  ta.addEventListener('focus', onFocus )
+  ta.addEventListener('focus'  , onFocus )
 
   this.unwrap = function () {
     ta.removeEventListener('input'  , onInput)
