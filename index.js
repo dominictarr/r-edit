@@ -44,6 +44,12 @@ R.unwrap = function () {
 }
 
 R.wrap = function (ta) {
+  if(
+    !ta || 
+    !(ta instanceof HTMLTextAreaElement) ||
+    !(ta instanceof HTMLInputElement)
+  ) throw new Error('wrap(ta) expects TextArea, or Input')
+
   var cursor = 0, start
   var self = this
 
