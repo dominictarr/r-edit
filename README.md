@@ -41,6 +41,20 @@ shoe(function (stream) {
 }).install(httpServer)
 ```
 
+## widget 
+
+Create a widget that displays text as a subset of markdown.
+
+``` js
+var widget = require('r-edit/widget')
+var e = new REdit()
+
+document.body.appendChild(widget(e))
+```
+
+So far, only a few features are supported, headers, italics, bold, code, and bullet-points.
+but not syntax that must go over multiple lines, such as quotes, large code sections, or nested lists.
+
 ## License
 
 MIT
