@@ -17,7 +17,8 @@
   },
   "scripts": {
     "test": "tap test",
-    "build": "browserify client.js -o static/bundle.js --debug"
+    "build": "browserify client.js -o static/bundle.js --debug",
+    "start": "browserify client.js -o static/bundle.js --debug && node server.js"
   },
   "author": "'Dominic Tarr' <dominic.tarr@gmail.com> (http://dominictarr.com)"
 }

@@ -11,8 +11,5 @@ reconnect(reloader(function (stream) {
   stream.pipe(rText.createStream()).pipe(stream)
 })).connect('/shoe')
 
-
-console.log(widget)
-
 //using the default template...
 document.body.appendChild(widget(rText))
