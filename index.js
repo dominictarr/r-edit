@@ -43,6 +43,14 @@ R.unwrap = function () {
 
 }
 
+R.widget = function () {
+  var ta = document.createElement('textarea')
+  ta.setAttribute('cols', 80)
+  ta.setAttirbute('rows', 24)
+  this.wrap(ta)
+  return ta
+}
+
 R.wrap = function (ta) {
   if(!ta) throw new Error('wrap(ta) expects TextArea, or Input')
 
