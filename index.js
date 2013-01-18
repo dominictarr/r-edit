@@ -46,7 +46,7 @@ R.unwrap = function () {
 R.widget = function () {
   var ta = document.createElement('textarea')
   ta.setAttribute('cols', 80)
-  ta.setAttirbute('rows', 24)
+  ta.setAttribute('rows', 24)
   this.wrap(ta)
   return ta
 }
