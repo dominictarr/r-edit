@@ -16,13 +16,8 @@ function open(hash) {
     doc = rEdit
     if(err) throw err
     document.body.innerHTML = ''
-    var ta = document.createElement('textarea')
-    ta.setAttribute('cols', 80)
-    ts.setAttribute('rows', 24)
-    document.body.appendChild(ta)
-    rEdit.wrap(ta)
+    document.body.appendChild(rEdit.widget())
     document.body.appendChild(widget(rEdit))
-
   })
 }
 
