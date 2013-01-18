@@ -1,0 +1,19 @@
+{
+  "name": "r-edit",
+  "version": "0.1.2",
+  "homepage": "https://github.com/dominictarr/r-edit",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/r-edit.git"
+  },
+  "dependencies": {
+    "adiff": "~0.2.7",
+    "r-array": "~0.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "'Dominic Tarr' <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
