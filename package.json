@@ -1,6 +1,6 @@
 {
   "name": "r-edit",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/dominictarr/r-edit",
   "repository": {
     "type": "git",
@@ -8,10 +8,11 @@
   },
   "dependencies": {
     "adiff": "~0.2.7",
-    "r-array": "~0.4.1",
+    "r-array": "~0.4.1"
+  },
+  "devDependencies": {
     "hash-change": "~0.1.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
