@@ -21,6 +21,7 @@ see [r-edit/example](https://github.com/dominictarr/r-edit/tree/master/example)
 var REdit = require('r-edit')
 
 var r = REdit().wrap(textarea)
+// or r.widget() <-- returns a new textarea (80x24)
 
 var stream = shoe('/redit')
 
@@ -41,7 +42,7 @@ shoe(function (stream) {
 }).install(httpServer)
 ```
 
-## widget 
+## markdown-widget 
 
 Create a widget that displays text as a subset of markdown.
 
