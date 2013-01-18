@@ -12,7 +12,7 @@ var doc
 function open(hash) {
   if(doc) doc.dispose()
 
-  rumours.open('r-edit_demo', function (err, rEdit) {
+  rumours.open('r-edit_' + (hash || 'demo'), function (err, rEdit) {
     doc = rEdit
     if(err) throw err
     document.body.innerHTML = ''
@@ -21,5 +21,5 @@ function open(hash) {
   })
 }
 
-open(hashchange.hash())
+open(hashChange.hash())
 
