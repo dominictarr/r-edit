@@ -97,6 +97,7 @@ R.wrap = function (ta) {
     if(update[2] !== self.id) {
       ta.value = self.toJSON().join('')
       ta.selectionStart = ta.selectionEnd = start
+      ta.dispatchEvent(new Event('input'))
     }
   }
   this.on('_update'  , on_update)
