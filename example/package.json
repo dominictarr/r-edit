@@ -9,7 +9,7 @@
   "dependencies": {
     "shoe": "~0.0.7",
     "ecstatic": "~0.1.6",
-    "reconnect": "~0.1.2",
+    "reconnect": "~0.5.2",
     "client-reloader": "~1.0.2"
   },
   "devDependencies": {
